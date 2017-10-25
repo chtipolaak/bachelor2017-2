@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="05ba6a21-807c-4018-bbae-9da1ea5a7439" name="bachelor2017-2" url="http://www.chtipolaak.com">
+        <fileTransfer host="www.chtipolaak.com" port="2221" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="2221" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
