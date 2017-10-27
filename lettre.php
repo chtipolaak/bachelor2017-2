@@ -13,7 +13,7 @@ catch ( Exception $e )
     die();
 
 }
-
+$req = $conn->prepare('UPDATE lettre SET lettre = lettre +1 WHERE id = :champs');
 
 
 
@@ -30,14 +30,16 @@ if ($_GET['type'] == 'voyelle')
 {
     $lvoyelle = $voyelle[$chiffrev];
     echo $lvoyelle ;
-    $requete = "UPDATE lettre SET nombrelettre=nombrelettre+1 WHERE numAuteur = '$lconsonne'";
+
+    $req->execute(array( 'champs' => $lvoyelle));
+
 
 }
 //le if regarde si la touche est consonne ou non et alors il choisit une valeur aléatoire dans le tableau
 if ($_GET['type'] == 'consonne') {
     $lconsonne = $consonne[$chiffrec];
     echo $lconsonne;
-    $requete = "UPDATE lettre SET nombrelettre=nombrelettre+1 WHERE numAuteur = '$lconsonne'";
+    $req->execute(array( 'champs' => $lconsonne));
 
 
 
