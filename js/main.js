@@ -77,26 +77,32 @@ function wordGenerator() {
 var j = 1;
 (function () {
         var state = false;
+    //si le bouton voyelle est cliqué, alors le "type" de lettre.php passe en "voyelle"
         $("#voyelle").click(function(){
             $.get('/lettre.php?type=voyelle',function(e){
+                //un compteur pour chosir le nom de la lettre
             $('#lettre'+j).html(e);
             j++;
+
         })
 
     })
+    //si le bouton consonne est cliqué, alors le "type" de lettre.php passe en "consonne"
     $("#consonne").click(function() {
         $.get('/lettre.php?type=consonne', function (e) {
+            //un compteur pour chosir le nom de la lettre
             $('#lettre'+j).html(e);
             j++
+
         })
     })
 
-    $("#zero").click(function() {
+   /* $("#zero").click(function() {
         $.get('/lettre.php?type=zero', function (e) {
             $('#lettre'+j).html(e);
             j++
         })
-    })
+    })*/
     }());
 
 

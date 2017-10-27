@@ -1,15 +1,24 @@
-<?php // Déclaration des différentes variables utiles à la connexion
-$serveur = "172.29.20.212";
+<?php
+$serveur = "localhost";
 $base = 'lettre';
 $utilisateur = 'root';
 $motDePasse = 'root';
 
-//création  d'une connexion
- try {
- $dns = "mysql:host=$serveur;dbname=$base";
- $conn = new PDO( $dns, $utilisateur, $motDePasse );
- } catch
-( Exception $e )
- {   echo "Connexion MySQL impossible : ", $e->getMessage();
-die(); }
+try {
+    $dns = "mysql:host=$serveur;dbname=$base";
+    $conn = new PDO( $dns, $utilisateur, $motDePasse );
+}
+catch ( Exception $e )
+{   echo "Connexion MySQL impossible : ", $e->getMessage();
+    die();
+
+}
+
+$lettre = $_GET['lettre'];
+$sql = $conn->prepare("UPDATE lettre SET nombrelettre=nombrelettre+1 WHERE lettre = '$lettre';");
+
+
+$success = $sql->execute($donnees);
+
+
 ?>
